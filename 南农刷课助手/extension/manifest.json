@@ -1,0 +1,23 @@
+﻿{
+  "manifest_version": 3,
+  "name": "南农入党培训 · 刷课助手",
+  "version": "0.5.0",
+  "description": "自动续播、自动跳下一节，只刷必修/必读视频（本机点击，不上传数据）",
+  "permissions": ["debugger"],
+  "host_permissions": [
+    "https://wsdx.njau.edu.cn/*"
+  ],
+  "background": {
+    "service_worker": "bg.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://wsdx.njau.edu.cn/cjjy/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
+
+
